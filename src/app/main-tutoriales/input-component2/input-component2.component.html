@@ -1,0 +1,39 @@
+<div class="row justify-content-center border border-3 border-dark p-1">
+    <div class="col-12 mb-2">Componente hijo</div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-secondary" (click)="cambiarColor('secondary')">Gris</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-primary" (click)="cambiarColor('primary')">Azul</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-danger" (click)="cambiarColor('danger')">Rojo</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-warning" (click)="cambiarColor('warning')">Amarillo</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-success" (click)="cambiarColor('success')">Verde</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-dark" (click)="cambiarColor('dark')">Negro</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="d-grid">
+            <button class="p-2 mb-2 btn btn-light" (click)="cambiarColor('light')">Blanco</button>
+        </div>
+    </div>
+    <input class="card bg-dark text-light text-center" (keyup)="emitTitleChange()" [(ngModel)]="title">
+</div>

@@ -1,0 +1,23 @@
+<div class="row justify-content-around mt-3 mb-3">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <i>&#64;input [comunicación entre componentes]</i><br>
+            <i>&#64;output [comunicación entre componentes]</i>
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="card">
+            <div class="card-header">
+                Componente padre
+                <div class="d-grid p-1 {{ color }}">
+                    <input class="form-control " type="text" [(ngModel)]="title">
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- FORMA CORTA EN CASO DE QUE SE USE EL MISMO NOMBRE EN TODO "title" 
+                    [(title)]="title" -->
+                <app-input-component2 [title]="title" (titleChange)="title= $event" (colorChange)="color = $event"></app-input-component2>
+            </div>
+        </div>
+    </div>
+</div>

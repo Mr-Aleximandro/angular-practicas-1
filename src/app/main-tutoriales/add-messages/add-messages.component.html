@@ -1,0 +1,24 @@
+<div class="justify-content-around mt-3 mb-3">
+    <div class="alert alert-info"><i>Servicios</i></div>
+    
+    
+    <div class="col-12 mb-3">
+        <div class="card">
+            <div class="card-header"><strong>app-add-messages</strong></div>
+            <div class="card-body">
+                <input type="text" class="form-control" placeholder="Ingrese un mensaje..." name="mensaje" [(ngModel)]="mensaje">
+                <div class="d-grid">
+                    <button class="btn btn-outline-dark" (click)="addMessage()">Agregar mensaje a la lista</button>
+            </div>
+        </div>
+        <div class="card-footer">
+            <p><i><strong>Console:</strong></i></p>
+            <p>{{ mensaje | json }}</p>
+            <p>{{ messageService.message | json}}</p>
+        </div>
+    </div>
+</div>
+
+<app-list-messages></app-list-messages>
+
+</div>

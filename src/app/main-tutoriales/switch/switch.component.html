@@ -1,0 +1,35 @@
+<div class="row justify-content-between mb-2">
+    <div class="col-md-6">
+        <div [ngSwitch]="dia" *ngIf="dia">
+            <span *ngSwitchCase="1">Lunes</span>
+            <span *ngSwitchCase="2">Martes</span>
+            <span *ngSwitchCase="3">Miércoles</span>
+            <span *ngSwitchCase="4">Jueves</span>
+            <span *ngSwitchCase="5">Viernes</span>
+            <span *ngSwitchCase="6">Sabado</span>
+            <span *ngSwitchCase="7">Domingo</span>
+            <span *ngSwitchDefault>Valor no válido</span>
+        </div>
+
+        <div [ngSwitch]="day" *ngIf="day">
+            <span *ngSwitchCase="'Lunes'">1</span>
+            <span *ngSwitchCase="'Martes'">2</span>
+            <span *ngSwitchCase="'Miercoles'">3</span>
+            <span *ngSwitchCase="'Jueves'">4</span>
+            <span *ngSwitchCase="'Viernes'">5</span>
+            <span *ngSwitchCase="'Sábado'">6</span>
+            <span *ngSwitchCase="'Domingo'">7</span>
+            <span *ngSwitchDefault>Valor no válido</span>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="input-group">
+                    <input class="form-control" type="text" #inptDia>
+                    <button class="btn btn-danger" (click)="day=inptDia.value">Mostrar día</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="row justify-content-around p-3">
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+
+            <form (ngSubmit)="procesar()" #form="ngForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="inpt1" placeholder="Nombre" [(ngModel)]="persona.nombre" required #inpt1="ngModel">
+                    <div class="alert alert-danger p-1" [hidden]="inpt1.valid || inpt1.pristine"><i>Nombre incorrecto</i></div>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="inpt2" placeholder="Edad" [(ngModel)]="persona.edad" required #inpt2="ngModel">
+                    <div class="alert alert-danger p-1" [hidden]="inpt2.valid || inpt2.pristine"><i>Ingrese su edad</i></div>
+                </div>
+
+                <div class="d-grid">
+                    <button class="btn btn-success m-2" [disabled]="form.invalid">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="card-footer">
+            {{persona.nombre}}
+            <br>
+            {{persona.edad}}
+            {{ persona | json}}
+            
+            <hr>
+            <strong>...::::ngModel del input Nombre (inpt1)::::...</strong>
+            <p>inpt1.errors-> {{ inpt1.errors | json }}</p>
+            <p>inpt1.valid-> {{ inpt1.valid | json }}</p>
+            <p>inpt1.invalid-> {{ inpt1.invalid | json }}</p>
+            <p>inpt1.pristine-> {{ inpt1.pristine | json }}</p>
+            <p>inpt1.untouched-> {{ inpt1.untouched | json }}</p>
+            <p>inpt1.touched-> {{ inpt1.touched | json }}</p>
+            <p>inpt1.dirty-> {{ inpt1.dirty | json }}</p>
+
+            <hr>
+            <strong>...::::ngModel del input Nombre (inpt2)::::...</strong>
+            <p>inpt2.errors-> {{ inpt2.errors | json }}</p>
+            <p>inpt2.valid-> {{ inpt2.valid | json }}</p>
+            <p>inpt2.invalid-> {{ inpt2.invalid | json }}</p>
+            <p>inpt2.pristine-> {{ inpt2.pristine | json }}</p>
+            <p>inpt2.untouched-> {{ inpt2.untouched | json }}</p>
+            <p>inpt2.touched-> {{ inpt2.touched | json }}</p>
+            <p>inpt2.dirty-> {{ inpt2.dirty | json }}</p>
+
+            <hr>
+            <strong>...::::ngModel del Formulario (form)::::...</strong>
+            <p>form.errors-> {{ form.errors | json }}</p>
+            <p>form.valid-> {{ form.valid | json }}</p>
+            <p>form.invalid-> {{ form.invalid | json }}</p>
+            <p>form.pristine-> {{ form.pristine | json }}</p>
+            <p>form.untouched-> {{ form.untouched | json }}</p>
+            <p>form.touched-> {{ form.touched | json }}</p>
+            <p>form.dirty-> {{ form.dirty | json }}</p>
+            
+        </div>
+    </div>
+</div>
+</div>
+

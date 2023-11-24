@@ -1,0 +1,41 @@
+<div class="justify-content-around mb-3">
+<div class="col-auto">
+    <div class="card">
+        <div class="card-header">Formulario reactivo</div>
+        <div class="card-body">
+            <form [formGroup]="formulario">
+                <div class="mb-3">
+                    <input type="email" formControlName="correo" class="form-control" placeholder="Correo">
+                    <div class="alert alert-danger p-1" [hidden]="correo.pristine || correo.valid">
+                        <span *ngIf="correo.errors?.['required']">El campo es obligatorio</span>
+                        <span *ngIf="correo.errors?.['email']">El correo es incorrecto</span>
+                    </div>
+                    <!-- MANERA PARA ACCEDER INDIVIDUALMENTE AL INPUT 
+                        <div class="alert alert-danger p-1" [hidden]="correo.pristine || correo.valid">
+                        <span *ngIf="correo.errors?.['required']">El campo es obligatorio</span>
+                        <span *ngIf="correo.errors?.['email']">El correo es incorrecto</span>
+                    </div> -->
+                </div>
+                <div class="mb-3">
+                    <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre">
+                    <div class="alert alert-danger p-1" [hidden]="nombre.pristine || nombre.valid">El campo es obligatorio</div>
+                    <!-- MANERA PARA ACCEDER INDIVIDUALMENTE AL INPUT  
+                        <div class="alert alert-danger p-1" [hidden]="nombre.pristine || nombre.valid">El campo es obligatorio</div> -->
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-danger" [disabled]="formulario.invalid" (click)="procesar()">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <!-- {{correo.value}} - {{nombre.value}} -->
+            {{formulario.value | json}}
+            <br>
+            {{correo.value}}
+            <br> 
+            {{nombre.value}}
+            <br>
+        </div>
+    </div>
+</div>
+</div>

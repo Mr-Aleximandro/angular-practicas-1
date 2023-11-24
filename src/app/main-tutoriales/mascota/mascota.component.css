@@ -1,0 +1,13 @@
+.card-mascota{
+    border-color: #daa520;
+    border-width: .2rem;
+    border-style: solid;
+    background-color: #171717;
+    color: antiquewhite;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+h1{
+    color:azure;
+}

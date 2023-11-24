@@ -1,0 +1,42 @@
+
+
+<div class="row justify-content-center mb-5">
+    <div class="p-4 text-center">
+        <p [class]="color">Div que cambia de color</p>
+    </div>
+    <div class="col-3">
+        <button [class.disabled]="flagDisabled" type="button" class="btn btn-primary" (click)="color='btn-primary'">Azul</button>
+    </div>
+    <div class="col-3">
+        <button [class.disabled]="flagDisabled" type="button" class="btn btn-danger" (click)="color='btn-danger'">Rojo</button>
+    </div>
+    <div class="col-3">
+        <button [class]="{
+            'disabled': flagDisabled,
+            'btn': true,
+            'btn-warning': true
+        }" type="button" (click)="color='btn-warning'">Amarillo</button>
+    </div>
+    <div class="col-3">
+        <button [class.disabled]="flagDisabled" type="button" class="btn btn-light" (click)="color='btn-light'">Blanco</button>
+    </div>
+
+    <div class="col-5 m-3">
+        <button type="button" class="btn btn-secondary" (click)="flagDisabled = !flagDisabled">Habilitar/Deshabilitar</button>
+    </div>
+    
+    
+    <div class="col-12">
+        <div class="row justify-content-around">
+            <div class="col-auto">
+                <button class="btn btn-danger" (click)="src='https://images.pexels.com/photos/18920825/pexels-photo-18920825/free-photo-of-procesado-con-vsco-con-a1-preestablecido.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">Imágen 1</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-danger" (click)="src='https://images.pexels.com/photos/19097339/pexels-photo-19097339/free-photo-of-alto-noria-atraccion-divertido.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">Imágen 2</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <img [src]="src" width="100%" height="100%">
+    </div>
+</div>

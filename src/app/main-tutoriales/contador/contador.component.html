@@ -1,0 +1,29 @@
+<h2>Mi nombre es: {{persona.nombre}}</h2>
+<h2>Mi edad es: {{persona.edad}}</h2>
+<h2>Soy: {{puesto}}</h2>
+
+<hr>
+
+<div class="row justify-content-around">
+    <div class="col-auto">
+        <button class="btn btn-sm btn-dark" (click)="contador = contador -1">-</button>
+    </div>
+    <div class="col-auto">
+        <h1>{{contador}}</h1>
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-sm btn-dark" (click)="contador = contador +1">+</button>
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-sm btn-dark" (click)="restar()">-</button>
+    </div>
+    <div class="col-auto">
+        <h1>{{contador}}</h1>
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-sm btn-dark" (click)="sumar()">+</button>
+    </div>
+    
+</div>
+
+<app-boton></app-boton>
