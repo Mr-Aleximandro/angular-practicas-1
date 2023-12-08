@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
+import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
   selector: 'app-boton',
@@ -7,13 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
-  ngOnInit(): void {
-  }
-
+  url?: string;
+  url1?: string;
+  url2?: string;
   color: string = '';
   flagDisabled: boolean = false;
-  src: string = 'https://images.pexels.com/photos/18920825/pexels-photo-18920825/free-photo-of-procesado-con-vsco-con-a1-preestablecido.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
+  ngOnInit(): void {
+    const imageData$ = this.getImage();
+
+    imageData$.subscribe(url => {
+      this.url1 = url;
+      this.url = url;
+    });
+
+    imageData$.subscribe(url => {
+      this.url2 = url;
+    });
+  }
+
+  getImage(): Observable<string> {
+    return this.httpService.getData().pipe(
+      map(result => result.image)
+    );
+  }
+  
+
+  
+
+  
 }

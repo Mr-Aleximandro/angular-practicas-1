@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './info/about/about.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 //LAS RUTAS AHORA SE ENCUENTRAN EN './app-routing.module.ts'
 /* import { RouterModule, Routes} from '@angular/router';
@@ -94,7 +95,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     //RouterModule.forRoot(routes)
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
